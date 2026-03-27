@@ -1,11 +1,26 @@
 
 calculadora = 1
 while calculadora == 1:
-    num1 = float(input('Digite um número: '))
-    num2 = float(input('Digite outro número: '))
+
+    num1 = input('Digite um número: ')
+    num2 = input('Digite outro número: ')
     calc = input('Digite um operador [+|-|*|/]: ')
 
+    num_validos = None
+
+    try:
+        num1_float = float(num1)
+        num2_float = float(num2)
+        num_validos = True
+    except:
+        num_validos = None 
+
+    if num_validos == None:
+        print('Um ou ambos números são inválidos.')
+        continue
+
     if calc == '+':
+        
         soma = num1 + num2
         print(soma)
 
